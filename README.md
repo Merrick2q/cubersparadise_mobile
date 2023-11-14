@@ -183,4 +183,36 @@ Membungkus konten utama aplikasi.
                     );
                 }
             }
-        ```       
+        ```
+        
+## Tugas 8 PBP
+## Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+1. Navigator.push()
+   - Metode ini digunakan untuk menambahkan layar baru ke dalam tumpukan navigasi (navigation stack).
+   - Saat menggunakan Navigator.push(), layar baru akan ditumpuk di atas layar saat ini dalam tumpukan navigasi.
+   - Layar sebelumnya tetap ada di tumpukan dan dapat diakses dengan tombol "back" atau metode Navigator.pop().
+   - Contoh:
+   ```
+   if (item.name == "Tambah Item") {
+       Navigator.push(context,
+       MaterialPageRoute(builder: (context) => const ShopFormPage()));
+   } 
+   ```
+2. Navigator.pushReplacement()
+   - Metode ini digunakan untuk menambahkan layar baru ke dalam tumpukan navigasi dan menggantikan layar saat ini dengan layar yang baru.
+   - Saat menggunakan Navigator.pushReplacement(), layar saat ini dihapus dari tumpukan dan diganti dengan layar baru.
+   - Ini berguna ketika kita ingin mengganti layar saat ini dengan layar baru, misalnya, setelah pengguna melakukan aksi tertentu seperti login.
+   - Contoh:
+   ```
+   onTap: () {
+       Navigator.pushReplacement(
+       context,
+       MaterialPageRoute(builder: (context) => const ShopFormPage(),
+       ));
+   },
+   ```  
+## Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+
+## Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+## Bagaimana penerapan clean architecture pada aplikasi Flutter?
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)                         
