@@ -31,7 +31,7 @@ class _ViewPageState extends State<ViewPage> {
                 margin: const EdgeInsets.all(8.0),
                 child: ListTile(
                   title: Text(item.name),
-                  subtitle: Text('Price: Rp ${item.price}\n${item.description}'),
+                  subtitle: Text('Quantity: ${item.quantity}\nDescription: ${item.description}'),
                   trailing: IconButton(
                 icon: const Icon(Icons.info_outline, color: Colors.indigo),
                 onPressed: () {
@@ -44,7 +44,7 @@ class _ViewPageState extends State<ViewPage> {
                         content: SingleChildScrollView(
                           child: ListBody(
                             children: <Widget>[
-                              Text("Price: Rp ${item.price}"),
+                              Text("Quantity: ${item.quantity}"),
                               Text("Description: ${item.description}"),
                             ],
                           ),

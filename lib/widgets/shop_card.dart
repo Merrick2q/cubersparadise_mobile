@@ -4,10 +4,10 @@ import 'package:cubersparadise_mobile/screen/view_product.dart';
 
 class Item {
   final String name;
-  final int price;
+  final int quantity;
   final String description;
 
-  Item({required this.name, required this.price, required this.description});
+  Item({required this.name, required this.quantity, required this.description});
 }
 
 class ShopItem {

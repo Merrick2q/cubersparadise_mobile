@@ -14,7 +14,7 @@ List<Item> items = [];
 class _ShopFormPageState extends State<ShopFormPage> {
     final _formKey = GlobalKey<FormState>();
     String _name = "";
-    int _price = 0;
+    int _quantity = 0;
     String _description = "";
 
     @override
@@ -39,8 +39,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Nama Produk",
-                        labelText: "Nama Produk",
+                        hintText: "Product Name",
+                        labelText: "Product Name",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
@@ -62,15 +62,15 @@ class _ShopFormPageState extends State<ShopFormPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Harga",
-                        labelText: "Harga",
+                        hintText: "Quantity",
+                        labelText: "Quantity",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
                       ),
                       onChanged: (String? value) {
                         setState(() {
-                          _price = int.parse(value!);
+                          _quantity = int.parse(value!);
                         });
                       },
                       validator: (String? value) {
@@ -88,8 +88,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        hintText: "Deskripsi",
-                        labelText: "Deskripsi",
+                        hintText: "Description",
+                        labelText: "Description",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5.0),
                         ),
@@ -120,7 +120,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                           if (_formKey.currentState!.validate()) {
                             items.add(Item(
                               name: _name,
-                              price: _price,
+                              quantity: _quantity,
                               description: _description,
                             ));
                             showDialog(
@@ -133,10 +133,10 @@ class _ShopFormPageState extends State<ShopFormPage> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text('Nama: $_name'),
+                                        Text('Name: $_name'),
 
-                                        Text('Harga: Rp $_price'),
-                                        Text('Deskripsi: $_description'),
+                                        Text('Quantity: $_quantity'),
+                                        Text('Description: $_description'),
                                       ],
                                     ),
                                   ),
