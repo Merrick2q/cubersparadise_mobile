@@ -1,8 +1,8 @@
 import 'package:cubersparadise_mobile/widgets/left_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:cubersparadise_mobile/models/product.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 class ProductPage extends StatefulWidget {
     const ProductPage({Key? key}) : super(key: key);
@@ -12,16 +12,8 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
-Future<List<Product>> fetchProduct() async {
-    var url = Uri.parse(
-        'http://localhost:8000/json/');
-    var response = await http.get(
-        url,
-        headers: {"Content-Type": "application/json"},
-    );
-
-    // melakukan decode response menjadi bentuk json
-    var data = jsonDecode(utf8.decode(response.bodyBytes));
+Future<List<Product>> fetchProduct(request) async {
+    var data = await request.get('http://localhost:8000/get-product/');
 
     // melakukan konversi data json menjadi object Product
     List<Product> list_product = [];
@@ -35,13 +27,14 @@ Future<List<Product>> fetchProduct() async {
 
 @override
 Widget build(BuildContext context) {
+  final request = context.watch<CookieRequest>();
     return Scaffold(
         appBar: AppBar(
         title: const Text('Product'),
         ),
         drawer: const LeftDrawer(),
         body: FutureBuilder(
-            future: fetchProduct(),
+            future: fetchProduct(request),
             builder: (context, AsyncSnapshot snapshot) {
                 if (snapshot.data == null) {
                     return const Center(child: CircularProgressIndicator());
@@ -116,9 +109,12 @@ Widget build(BuildContext context) {
                                       }
                                     )         
                                 ),
-                            ));
+                            )
+                          );
                     }
                 }
-            }));
+            }
+          )
+        );
     }
 }

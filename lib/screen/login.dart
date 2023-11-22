@@ -1,4 +1,5 @@
 import 'package:cubersparadise_mobile/screen/menu.dart';
+import 'package:cubersparadise_mobile/screen/register.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
@@ -105,6 +106,16 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: const Text('Login'),
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to Register Page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => RegisterPage()),
+                            );
+                          },
+                          child: const Text('Register'),
+                        )
                     ],
                 ),
             ),
