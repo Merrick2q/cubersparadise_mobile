@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cubersparadise_mobile/widgets/shop_card.dart';
+// Impor drawer widget
 import 'package:cubersparadise_mobile/widgets/left_drawer.dart';
+import 'package:cubersparadise_mobile/widgets/shop_card.dart';
 
 class MyHomePage extends StatelessWidget {
     MyHomePage({Key? key}) : super(key: key);
@@ -9,19 +10,17 @@ class MyHomePage extends StatelessWidget {
         ShopItem("Tambah Item", Icons.add_shopping_cart, Colors.indigo.shade900),
         ShopItem("Logout", Icons.logout, Colors.red.shade900),
     ];
-
     @override
     Widget build(BuildContext context) {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
               'Cubersparadise',
-              style: TextStyle(color: Colors.white),
             ),
             backgroundColor: Colors.indigo,
-            centerTitle: false,
             foregroundColor: Colors.white,
           ),
+          // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
           drawer: const LeftDrawer(),
           body: SingleChildScrollView(
             // Widget wrapper yang dapat discroll
@@ -34,7 +33,7 @@ class MyHomePage extends StatelessWidget {
                     padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                     // Widget Text untuk menampilkan tulisan dengan alignment center dan style yang sesuai
                     child: Text(
-                      'Cubersparadise', // Text yang menandakan toko
+                      'PBP Shop', // Text yang menandakan toko
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 30,

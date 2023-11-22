@@ -30,7 +30,8 @@ class LeftDrawer extends StatelessWidget {
                 Text("Cek rubikmu disini!",
                     style: TextStyle(
                       color: Colors.white, 
-                      fontSize: 20,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
                     ),
                     textAlign: TextAlign.center,
                 ),
@@ -61,15 +62,15 @@ class LeftDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.checklist),
-            title: const Text('Lihat Item'),
-            // Bagian redirection ke ShopFormPage
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const ViewPage(),
-                ));
-            },
+              leading: const Icon(Icons.checklist),
+              title: const Text('Lihat Item'),
+              onTap: () {
+                  // Route menu ke halaman produk
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProductPage()),
+                  );
+              },
           ),
         ],
       ),
