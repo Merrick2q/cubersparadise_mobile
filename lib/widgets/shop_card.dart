@@ -46,7 +46,7 @@ class ShopCard extends StatelessWidget {
           // tambahkan else if baru seperti di bawah ini
           else if (item.name == "Logout") {
                   final response = await request.logout(
-                      "http://localhost:8000/auth/logout/");
+                      "https://cubersparadise.domcloud.dev/auth/logout/");
                   String message = response["message"];
                   if (response['status']) {
                     String uname = response["username"];

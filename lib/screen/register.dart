@@ -103,7 +103,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     return;
                     }
                     final response = await request.post(
-                        "http://localhost:8000/auth/register/",
+                        "https://cubersparadise.domcloud.dev/auth/register/",
                         {
                         'username': username,
                         'password': password,

@@ -13,7 +13,7 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
 Future<List<Product>> fetchProduct(request) async {
-    var data = await request.get('http://localhost:8000/get-product/');
+    var data = await request.get('https://cubersparadise.domcloud.dev/get-product/');
 
     // melakukan konversi data json menjadi object Product
     List<Product> list_product = [];
