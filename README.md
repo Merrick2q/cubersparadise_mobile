@@ -12,6 +12,7 @@ NPM     : 2206083161
 [![Build status](https://build.appcenter.ms/v0.1/apps/bee39015-1585-43d0-8a05-64171527158f/branches/main/badge)](https://appcenter.ms)
 
 INI CUMA BUAT MERGE
+INI JUGA
 
 ## Tugas 7 PBP
 ## Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
